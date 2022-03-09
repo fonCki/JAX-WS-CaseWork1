@@ -35,4 +35,14 @@ public class ManageOrderServiceImp implements ManageOrderService{
         return JsonConverter.toJson(manageOrder.get(id));
     }
 
+    @Override
+    public void updateOrder(int id, String description, float amount, boolean delivered) {
+        manageOrder.update(new Order(id, description, amount, delivered));
+    }
+
+    @Override
+    public void deleteOrder(int id) {
+        manageOrder.delete(id);
+    }
+
 }

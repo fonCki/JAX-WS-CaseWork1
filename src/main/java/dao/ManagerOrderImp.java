@@ -26,7 +26,7 @@ public class ManagerOrderImp implements ManageOrder<Order>{
     @Override
     public Order get(int id) {
         return  orderList.stream()
-                .filter(i -> i.getId() == id)
+                .filter(o -> o.getId() == id)
                 .findAny()
                 .orElse(new Order(-1, "NOT FOUND", 0, false));
     }
@@ -43,7 +43,8 @@ public class ManagerOrderImp implements ManageOrder<Order>{
 
     @Override
     public void update(Order order) {
-        orderList.set(orderList.indexOf(order), order);
+        delete(get(order.getId()));
+        create(order);
     }
 
 

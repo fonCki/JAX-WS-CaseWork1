@@ -5,9 +5,8 @@ import dao.ManagerOrderImp;
 import jsonConverter.JsonConverter;
 import model.Order;
 
-import javax.jws.WebParam;
 import javax.jws.WebService;
-import java.util.List;
+
 
 @WebService(endpointInterface = "service.ManageOrderService", serviceName = "ManageOrderService")
 public class ManageOrderServiceImp implements ManageOrderService{
@@ -26,8 +25,8 @@ public class ManageOrderServiceImp implements ManageOrderService{
     }
 
     @Override
-    public void AddOrder(int id, String description, float amout, boolean delivered) {
-        manageOrder.create(new Order(id,description,amout,delivered));
+    public void AddOrder(String description, float amout, boolean delivered) {
+        manageOrder.create(new Order(description,amout,delivered));
     }
 
     @Override

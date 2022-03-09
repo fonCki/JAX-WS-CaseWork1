@@ -12,8 +12,7 @@ import java.util.List;
 public interface ManageOrderService {
      @WebMethod String getList();
 
-     @WebMethod void AddOrder(@WebParam(name = "id") int id,
-                              @WebParam(name = "description") String description,
+     @WebMethod void AddOrder(@WebParam(name = "description") String description,
                               @WebParam(name = "amount") float amout,
                               @WebParam(name = "delivered") boolean delivered);
 

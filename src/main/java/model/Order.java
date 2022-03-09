@@ -9,6 +9,12 @@ public class Order {
     public Order() {
     }
 
+    public Order(String description, float amount, boolean delivered) {
+        this.description = description;
+        this.amount = amount;
+        this.delivered = delivered;
+    }
+
     public Order(int id, String description, float amount, boolean delivered) {
         this.id = id;
         this.description = description;
@@ -43,5 +49,15 @@ public class Order {
 
     public void setDelivered(boolean delivered) {
         this.delivered = delivered;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", amount=" + amount +
+                ", delivered=" + delivered +
+                '}';
     }
 }
